@@ -1,0 +1,27 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "sourceMap": false,
+    "rootDir": "src",
+    "lib": ["ES2022"],
+    "target": "es2022",
+    "outDir": "./tmp/ignore",
+    "declaration": true,
+    "noEmitOnError": true,
+    "noErrorTruncation": true,
+    "allowJs": true,
+    "checkJs": true,
+    "module": "node20",
+    "moduleResolution": "node16",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "stripInternal": true,
+    "strictNullChecks": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "typeRoots": ["./node_modules/@types"]
+  }
+}

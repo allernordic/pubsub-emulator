@@ -1,0 +1,5 @@
+package-lock.json
+coverage
+node_modules
+types/index.d.ts
+tsconfig.json

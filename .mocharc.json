@@ -1,0 +1,8 @@
+{
+  "extension": ["js"],
+  "timeout": 5000,
+  "recursive": true,
+  "require": ["chai/register-expect.js", "./test/helpers/setup.js"],
+  "ui": "mocha-cakes-2",
+  "node-option": ["no-warnings"]
+}
