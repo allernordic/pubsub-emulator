@@ -47,6 +47,12 @@
   "dependencies": {
     "smqp": "^13.1.0"
   },
+  "overrides": {
+    "mocha": {
+      "serialize-javascript": "^7.0.3",
+      "yargs": "^18.1.0"
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@google-cloud/pubsub": "^5.2.0",
