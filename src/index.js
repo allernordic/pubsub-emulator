@@ -802,6 +802,12 @@ export async function startServer(options) {
         return getFakeSubscription(broker, name);
       },
     },
+    forceShutdown: {
+      value: function forceShutdown() {
+        debug('force shutdown service at %d', port);
+        return grpc.Server.prototype.forceShutdown.call(this);
+      },
+    },
   });
 
   return /** @type {FakePubSubServer} */ (server);

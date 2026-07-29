@@ -1,7 +1,7 @@
 {
   "name": "@aller/pubsub-emulator",
   "description": "In-process Google Cloud Pub/Sub emulator for tests, runs the real @google-cloud/pubsub client against a local gRPC server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
