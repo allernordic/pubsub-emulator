@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.5 - 2026-08-17
+
+- fix proto resolution on Windows: use platform `node:path` instead of `node:path/posix`
+
 ## v0.0.4 - 2026-08-17
 
 - verified against `@google-cloud/pubsub@6`, dev dependency bumped to `^6.0.1`

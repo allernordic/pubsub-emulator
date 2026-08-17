@@ -1,5 +1,5 @@
 import { createRequire } from 'node:module';
-import path from 'node:path/posix';
+import path from 'node:path';
 
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
