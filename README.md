@@ -5,6 +5,7 @@ In-process [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) emulator for 
 Message state is backed by an [smqp](https://github.com/paed01/smqp) broker: topics are exchanges, subscriptions are FIFO queues, so ordering, ack/nack and redelivery behave predictably — and the broker is exported so tests can prefill state directly.
 
 [![Build](https://github.com/allernordic/pubsub-emulator/actions/workflows/build.yaml/badge.svg)](https://github.com/allernordic/pubsub-emulator/actions/workflows/build.yaml)
+[![Build (Windows)](https://github.com/allernordic/pubsub-emulator/actions/workflows/build-windows.yaml/badge.svg)](https://github.com/allernordic/pubsub-emulator/actions/workflows/build-windows.yaml)
 
 <!-- toc -->
 
