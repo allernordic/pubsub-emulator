@@ -1,7 +1,7 @@
 {
   "name": "@aller/pubsub-emulator",
   "description": "In-process Google Cloud Pub/Sub emulator for tests, runs the real @google-cloud/pubsub client against a local gRPC server",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "type": "module",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
@@ -45,11 +45,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "smqp": "^13.1.0"
+    "smqp": "^14.0.0"
   },
   "overrides": {
     "mocha": {
       "serialize-javascript": "^7.0.3",
+      "yargs": "^18.1.0"
+    },
+    "@grpc/proto-loader": {
       "yargs": "^18.1.0"
     }
   },
