@@ -1,13 +1,13 @@
 {
   "name": "@aller/pubsub-emulator",
   "description": "In-process Google Cloud Pub/Sub emulator for tests, runs the real @google-cloud/pubsub client against a local gRPC server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
     "test": "mocha",
-    "posttest": "npm run lint && npm run build && npm run test:types && npm run test:md",
+    "posttest": "npm run toc && npm run lint && npm run build && npm run test:types && npm run test:md",
     "lint": "eslint . --cache && prettier . -c",
     "prettier": "prettier . -w",
     "test:types": "tsc -p . && tsc -p test",
@@ -15,7 +15,7 @@
     "cov:html": "c8 -n src -r html -r text mocha",
     "test:lcov": "c8 -n src -r lcov -r text mocha",
     "build": "dts-buddy && npm run toc",
-    "toc": "node ./scripts/toc.js",
+    "toc": "toc README.md",
     "prepublishOnly": "npm run build"
   },
   "exports": {
@@ -45,11 +45,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "smqp": "^14.0.0"
+    "smqp": "^15.0.0"
   },
   "overrides": {
     "mocha": {
-      "serialize-javascript": "^7.0.3",
+      "serialize-javascript": "^7.1.1",
       "yargs": "^18.1.0"
     },
     "@grpc/proto-loader": {
@@ -57,6 +57,8 @@
     }
   },
   "devDependencies": {
+    "@0dep/piso": "^5.1.2",
+    "@0dep/toc": "^1.0.1",
     "@eslint/js": "^10.0.1",
     "@google-cloud/pubsub": "^6.0.1",
     "@grpc/grpc-js": "^1.13.4",
@@ -71,7 +73,7 @@
     "eslint": "^10.4.0",
     "eslint-plugin-perfectionist": "^5.9.0",
     "globals": "^17.6.0",
-    "mocha": "^11.7.1",
+    "mocha": "^11.8.0",
     "mocha-cakes-2": "^3.3.0",
     "prettier": "^3.6.2",
     "texample": "^1.0.2",
@@ -85,6 +87,7 @@
   },
   "files": [
     "src",
-    "types/index.d*"
+    "types/index.d.ts*",
+    "CHANGELOG.md"
   ]
 }

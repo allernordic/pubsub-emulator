@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.1 - 2026-09-16
+
+- `smqp` bumped to `^15.0.0`, no behavior change
+
 ## v0.1.0 - 2026-09-08
 
 - `smqp` bumped to `^14.0.0`, no behavior change
