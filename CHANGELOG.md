@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- verified against `@google-cloud/pubsub@6.1.0`, dev dependency bumped to `^6.1.0`, no behavior change
+
 ## v0.1.1 - 2026-09-16
 
 - `smqp` bumped to `^15.0.0`, no behavior change

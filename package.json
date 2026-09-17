@@ -15,7 +15,7 @@
     "cov:html": "c8 -n src -r html -r text mocha",
     "test:lcov": "c8 -n src -r lcov -r text mocha",
     "build": "dts-buddy && npm run toc",
-    "toc": "toc README.md",
+    "toc": "toc -c README.md",
     "prepublishOnly": "npm run build"
   },
   "exports": {
@@ -60,7 +60,7 @@
     "@0dep/piso": "^5.1.2",
     "@0dep/toc": "^1.0.1",
     "@eslint/js": "^10.0.1",
-    "@google-cloud/pubsub": "^6.0.1",
+    "@google-cloud/pubsub": "^6.1.0",
     "@grpc/grpc-js": "^1.13.4",
     "@grpc/proto-loader": "^0.8.0",
     "@types/debug": "^4.1.13",
