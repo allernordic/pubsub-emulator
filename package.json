@@ -57,7 +57,6 @@
     }
   },
   "devDependencies": {
-    "@0dep/piso": "^5.1.2",
     "@0dep/toc": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@google-cloud/pubsub": "^6.1.0",
