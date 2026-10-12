@@ -3,6 +3,7 @@
 ## Unreleased
 
 - verified against `@google-cloud/pubsub@6.1.0`, dev dependency bumped to `^6.1.0`, no behavior change
+- test suite runs on `mocha-scenarios` and mocha 12, replacing `mocha-cakes-2`
 
 ## v0.1.1 - 2026-09-16
 

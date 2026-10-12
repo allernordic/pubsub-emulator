@@ -15,7 +15,6 @@ Message state is backed by an [smqp](https://github.com/paed01/smqp) broker: top
   - [Prefill via the broker](#prefill-via-the-broker)
   - [Inspecting fake state](#inspecting-fake-state)
   - [API](#api)
-- [Test](#test)
 
 <!-- /toc -->
 
@@ -134,12 +133,3 @@ State lives on the server's broker — discard the server and the state is gone,
 - `RpcCodes` — gRPC status code map.
 
 Requires Node `>=22` (`require()` of the ESM source is supported natively — no CJS build is shipped).
-
-## Test
-
-```sh
-npm i
-npm test
-```
-
-Tests are written in BDD style with [mocha-cakes-2](https://www.npmjs.com/package/mocha-cakes-2), see `test/features/`.

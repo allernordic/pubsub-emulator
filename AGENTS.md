@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-- `npm t` / `npm test` — runs Mocha (mocha-cakes-2 BDD UI) and on success also runs `lint`, `build`, `test:types` and `test:md` via `posttest`.
+- `npm t` / `npm test` — runs Mocha (mocha-scenarios BDD UI) and on success also runs `lint`, `build`, `test:types` and `test:md` via `posttest`.
 - `npm run lint` — `eslint . --cache` followed by `prettier . -c`.
 - `npm run build` — `dts-buddy` regenerates `types/index.d.ts` from JSDoc, then `npm run toc` rewrites the README table of contents between the `<!-- toc -->` markers (`@0dep/toc` bin, defaults to `README.md`). There is no transpile/bundle step: Node `>=22` is required (`.nvmrc`) and `require()` of the ESM source works natively, so the package ships `src/` as-is.
 - `npm run test:md` — executes the README's ` ```javascript ` code blocks with `texample` (via `scripts/texample-setup.js`, which exits explicitly since examples leave fake servers bound). texample host-imports specifiers, so all blocks share one module graph — the broker singleton carries seeded state from the prefill example into the inspect example, and README examples are order-dependent. Only ` ```javascript ` fences run, never ` ```js `.
@@ -30,7 +30,7 @@ No TLS certs or auth setup is needed — the Pub/Sub client treats a custom non-
 
 ## Testing conventions
 
-- TDD in BDD style: write the failing feature spec first, then implement. `mocha-cakes-2` UI — `Feature` / `Scenario` / `Given` / `When` / `Then` / `And` are globals (declared for eslint in `eslint.config.js` and for tsc in `test/global.d.ts`); `expect` comes from `chai/register-expect.js` (`.mocharc.json`). Files live in `test/features/` named `*-feature.js`.
+- TDD in BDD style: write the failing feature spec first, then implement. `mocha-scenarios` UI — `Feature` / `Scenario` / `Given` / `When` / `Then` / `And` are globals (declared for eslint via `mocha-scenarios/globals` in `eslint.config.js` and for tsc via `types` in `test/tsconfig.json`); `expect` comes from `chai/register-expect.js` (`.mocharc.json`). Files live in `test/features/` named `*-feature.js`.
 - Tests import the package by name (`@aller/pubsub-emulator`) via Node package self-reference — never by relative `../src` paths.
 - Tests run the real `@google-cloud/pubsub` client against the fake server in-process: `new PubSub({ apiEndpoint: 'localhost:PORT', projectId: 'test-project' })`. Unary pull/ack uses `v1.SubscriberClient` with explicit `sslCreds: grpc.credentials.createInsecure()`.
 - In streaming tests, ack/nack **inside** the message handler while the stream is open, and prefer `subscription.on('message', ...)` over `once` — `once` removes the last listener on first delivery, which closes the client's streams before acks are sent (see stale-ack race above).
